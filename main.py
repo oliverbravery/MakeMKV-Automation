@@ -24,19 +24,19 @@ Status:
 '''
 
 load_dotenv()
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 # Variables
-packet_count = 0
-status = {"status": "starting", "timestamp": datetime.now()}
+packet_count: int = 0
+status: dict = {"status": "starting", "timestamp": datetime.now()}
 movie_name = None
 file_name = None
 tracks = []
 track_id = None
-makeMKV = MakeMKVHelper()
+makeMKV: MakeMKVHelper = MakeMKVHelper()
 
 
-def set_status(new_status):
+def set_status(new_status) -> None:
     global status
     status["status"] = new_status
     status["timestamp"] = datetime.now()
@@ -183,7 +183,7 @@ def run_webhook():
     flask_thread.start()
 
 
-def reset_variables():
+def reset_variables() -> None:
     global movie_name
     movie_name = None
     global file_name
@@ -194,7 +194,7 @@ def reset_variables():
     track_id = None
 
 
-def dvd_rip():
+def dvd_rip() -> None:
     # Start of the ripping "loop"
     reset_variables()
     set_status("started")

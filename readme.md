@@ -1,5 +1,7 @@
 # MakeMKV Automation
 
+⚠️ **Warning: This project is no longer actively maintained.**
+
 This project automates the DVD ripping process using WhatsApp as the user interface. Users can send commands and provide the DVD name through WhatsApp messaging, and the automation process will handle the entire DVD ripping process.
 
 ## Features
